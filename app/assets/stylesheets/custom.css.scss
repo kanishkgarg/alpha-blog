@@ -1,0 +1,72 @@
+$navbar-default-bg: #363636;
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+#logo {
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: capitalize;
+}
+
+.navbar {
+    border-radius: 0;
+}
+
+.center {
+    text-align: center;
+}
+
+.jumbotron {
+    background-image:asset-url('desk-wallpaper.jpg');
+    background-size: cover;
+    height: 530px;
+}
+
+.jumbotron h1 {
+    font-size: 6em;
+    font-weight: bold;
+    color: Black;
+    margin-bottom: 60px;
+    font-family: Monospace;
+}
+
+.background-image {
+    filter: grayscale(100%);
+}
+
+.btn-xlarge {
+    background-color: black;
+    font-size: 1.7em;
+}
+
+footer {
+    margin-top: 45px;
+    padding-top: 5px;
+    color: #777;
+    border-top: 1px solid #eaeaea;
+}
+
+footer a {
+    text-decoration: none;
+    color: #777;
+}
+
+footer a:hover {
+    color: #222;
+    text-decoration: none;
+}
+
+footer small {
+    float: left;
+}
+footer ul {
+    float: right;
+    list-style-type: none;
+}
+
+footer li {
+    float: left;
+    margin-left: 15px;
+}
