@@ -25,11 +25,12 @@ $navbar-default-bg: #363636;
 }
 
 .jumbotron h1 {
-    font-size: 6em;
+    font-size: 7em;
     font-weight: bold;
     color: Black;
     margin-bottom: 60px;
     font-family: Monospace;
+    line-height: -5px;
 }
 
 .background-image {
@@ -84,3 +85,21 @@ padding-top: 5px;
 .description {
 margin-top: 0;
 }
+
+.article-title {
+font-weight: bold;
+font-size: 1.5em;
+}
+
+.article-body {
+border-top: 1px solid #eaeaea;
+padding-top: 15px;
+padding-bottom: 15px;
+}
+
+.well-extended {
+    margin-right: -30px;
+    margin-left: -30px;
+}
+
+
