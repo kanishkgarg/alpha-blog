@@ -10,7 +10,7 @@
 <body>
   
   <%= render 'layouts/navigations' %>
-  <%= render 'layouts/messages' %>
+  <%= render 'layouts/messages'%>
   <% if current_page?(:controller => 'pages', :action => 'home') %>
       <%= yield %>
     <% else %>
