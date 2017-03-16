@@ -5,6 +5,13 @@
             <div class = "well well-lg well-extende">
                 <h4 class = "article-title"><%= link_to article.title, article_path(article) %></h4>
                 <div class = "article-body"><%= truncate(article.description, length: 100) %></div>
+                <div class = "timestamp-reading">
+                    <small>
+                        Created By: <%= article.user.username if article.user %> 
+                        <%= time_ago_in_words(article.created_at)%> ago,
+                        last updated: <%=time_ago_in_words(article.updated_at)%> ago
+                    </small>
+                </div>
                 <div class = "article_actions">
                     <div class="btn-group" role="group" aria-label="...">
                         <%= link_to "Edit", edit_article_path(article), class: "btn btn-default btn-xs" %>
