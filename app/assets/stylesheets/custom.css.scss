@@ -108,3 +108,25 @@ padding-bottom: 15px;
     padding: 10px;
 }
 
+h1 {
+    margin-bottom: 10px;
+    border-bottom: 1px solid #eaeaea;
+    padding-bottom: 15px;
+}
+
+.user_info {
+    margin: auto;
+    text-align: center;
+    line-height: 1.5em;
+    font-size: 1.25em;
+}
+
+.listing {
+    list-style-type: none;
+}
+
+.listing li:nth-child(1){
+    margin-top: 2em;
+}
+
+
