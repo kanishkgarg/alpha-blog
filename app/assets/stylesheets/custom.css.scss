@@ -97,6 +97,11 @@ padding-top: 15px;
 padding-bottom: 15px;
 }
 
+.article-body a {
+    text-decoration: none;
+    color: black;
+}
+
 .well-extended {
     margin-right: -30px;
     margin-left: -30px;
@@ -126,7 +131,7 @@ h1 {
 }
 
 .listing li:nth-child(1){
-    margin-top: 2em;
+    margin-top: 0.8em;
 }
 
 

@@ -3,7 +3,7 @@
         <% obj.each do |article| %>
             <div class = "well well-lg">
                 <h4 class = "article-title"><%= link_to article.title, article_path(article) %></h4>
-                <div class = "article-body"><%= truncate(article.description, length: 100) %></div>
+                <div class = "article-body"><%= link_to (truncate(article.description, length: 100)), article_path(article) %></div>
                 <div class = "timestamp-reading">
                     <small>
                         Created By: <%= article.user.username if article.user %> 
@@ -11,12 +11,14 @@
                         last updated: <%=time_ago_in_words(article.updated_at)%> ago
                     </small>
                 </div>
-                <div class = "article_actions">
-                    <div class="btn-group" role="group" aria-label="...">
-                        <%= link_to "Edit", edit_article_path(article), class: "btn btn-default btn-xs" %>
-                        <%= link_to "Delete", article_path(article), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-default btn-xs" %>
+                <% if logged_in? && current_user === article.user %>
+                    <div class = "article_actions">
+                        <div class="btn-group" role="group" aria-label="...">
+                            <%= link_to "Edit", edit_article_path(article), class: "btn btn-default btn-xs" %>
+                            <%= link_to "Delete", article_path(article), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-default btn-xs" %>
+                        </div>
                     </div>
-                </div>
+                <% end %>
             </div>
         <% end %>
     </div>

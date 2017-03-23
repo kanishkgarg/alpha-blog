@@ -16,9 +16,11 @@
         <%= simple_format( @article.description) %>
         <div class = "article_actions">
             <div class="btn-group" role="group" aria-label="...">
-            <%= link_to "Back", articles_path, class: "btn btn-default btn-xs" %>
-            <%= link_to "Edit", edit_article_path(@article), class: "btn btn-default btn-xs" %>
-            <%= link_to "Delete", article_path(@article), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-default btn-xs" %>
+            <%= link_to "View All Articles", articles_path, class: "btn btn-default btn-xs" %>
+            <% if logged_in? && current_user === @article.user %>
+                <%= link_to "Edit", edit_article_path(@article), class: "btn btn-default btn-xs" %>
+                <%= link_to "Delete", article_path(@article), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-default btn-xs" %>
+            <% end %>
             </div>
         </div>
     </div>

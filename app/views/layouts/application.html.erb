@@ -12,7 +12,7 @@
   <%= render 'layouts/navigations' %>
   <%= render 'layouts/messages'%>
   <% if current_page?(:controller => 'pages', :action => 'home') %>
-      <%= yield %>
+        <%= yield %>
     <% else %>
       <div class= "container">
         <%= yield %>
