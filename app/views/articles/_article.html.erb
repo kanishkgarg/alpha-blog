@@ -1,5 +1,5 @@
 <div class = "row">
-    <div class = "col-xs-8 col-xs-offset-2">
+    <div class = "col-sm-8 col-sm-offset-2">
         <% obj.each do |article| %>
             <div class = "well well-lg">
                 <h4 class = "article-title"><%= link_to article.title, article_path(article) %></h4>
@@ -11,7 +11,7 @@
                         last updated: <%=time_ago_in_words(article.updated_at)%> ago
                     </small>
                 </div>
-                <% if logged_in? && current_user === article.user %>
+                <% if logged_in? && ( current_user === article.user || current_user.admin? ) %>
                     <div class = "article_actions">
                         <div class="btn-group" role="group" aria-label="...">
                             <%= link_to "Edit", edit_article_path(article), class: "btn btn-default btn-xs" %>
