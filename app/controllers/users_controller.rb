@@ -57,12 +57,12 @@ class UsersController < ApplicationController
             flash[:danger] = "You can only edit your account"
             redirect_to root_path
         end
+    end
         
      def require_admin
        if logged_in? and !current_user.admin?
            flash[:danger] = "Only admin can perform these actions"
            redirect_to root_path
        end
-    end
     end
 end
