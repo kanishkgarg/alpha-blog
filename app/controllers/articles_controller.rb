@@ -17,8 +17,6 @@ class ArticlesController < ApplicationController
         @article = Article.new(article_params)
         @article.user = current_user
         if @article.save
-            @like = Like.new
-            @like.article_id = @article.id
             flash[:success] = "Article was successfully created"
             redirect_to article_path(@article)
             
