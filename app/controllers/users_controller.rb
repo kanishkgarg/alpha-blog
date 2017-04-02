@@ -34,7 +34,8 @@ class UsersController < ApplicationController
     end
     
     def show
-        @user_paginate = @user.articles.paginate(page: params[:page], per_page: 7)
+        @user_articles_sort = @user.articles.order(:id).reverse_order
+        @user_paginate =  @user_articles_sort.paginate(page: params[:page], per_page: 7)
     end
     
     def destroy
@@ -60,9 +61,9 @@ class UsersController < ApplicationController
     end
         
      def require_admin
-       if logged_in? and !current_user.admin?
+        if logged_in? and !current_user.admin?
            flash[:danger] = "Only admin can perform these actions"
            redirect_to root_path
-       end
+        end
     end
 end
