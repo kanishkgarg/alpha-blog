@@ -6,7 +6,8 @@ class ArticlesController < ApplicationController
     
     
     def index
-        @articles = Article.paginate(page: params[:page], per_page: 7)
+        @article_sort = Article.order(:id).reverse_order
+        @articles = @article_sort.paginate(page: params[:page], per_page: 7)
     end
     
     def new
@@ -34,7 +35,7 @@ class ArticlesController < ApplicationController
     def update
         if @article.update(article_params)
             flash[:success] = "Article was successfully updated"
-            redirect_to article_path(@article)
+            redirect_to user_path(current_user)
         else
             render 'edit'
         end
@@ -43,7 +44,7 @@ class ArticlesController < ApplicationController
     def destroy
         @article.destroy
         flash[:success] = "The Article was successfully deleted"
-        redirect_to articles_path
+        redirect_to user_path(current_user)
     end
     
     private
